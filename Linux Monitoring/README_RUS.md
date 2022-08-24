@@ -1,16 +1,9 @@
 # Linux Monitoring v1.0
 
-> При старте работы над проектом просим вас постараться хронометрировать время работы над проектом.
-> По завершении работы над проектом просим вас ответить на два вопроса [в этом опросе](https://forms.gle/iWe8U8GKmbxqvZJfA)
-
 Linux basic bash scripting and system research.
 
 ## Contents
 
-1. [Chapter I](#chapter-i)
-2. [Chapter II](#chapter-ii) \
-   2.1. [Bash](#bash) \
-   2.2. [Shell](#shell)
 3. [Chapter III](#chapter-iii) \
    3.1. [Проба пера](#part-1-проба-пера)  
    3.2. [Исследование системы](#part-2-исследование-системы)  
@@ -19,52 +12,6 @@ Linux basic bash scripting and system research.
    3.5. [Исследование файловой системы](#part-5-исследование-файловой-системы)
 4. [Chapter IV](#chapter-iv)
 
-## Chapter I
-
-![linux_monitoring_v1](misc/images/linux_monitoring_v1.png)
-
-Планета Земля, США, штат Калифорния, наши дни.
-
-Вы, как обычно, задержались на работе, чтобы не ехать домой по пробкам в час пик.
-Вы думаете, что кроме вас в офисе больше никого не осталось, пока не слышите шорохи из соседнего кабинета.
-Вы не придаёте этому значения, мало ли коллег могло задержаться, чтобы доделать свои дела. Вдруг вы слышите возглас из того самого кабинета (ваш коллега явно думал, что находится в офисе один):
-
-`-` Ух, как же я устал вручную собирать информацию о системе с этих компов на Линуксе. Наверное всё-таки стоило изучить его получше, прежде чем устраиваться сюда.
-
-Вы тут же понимаете, что это ваш новенький системный администратор, принятый на работу всего пару недель назад.
-По инициативе вашего товарища Майка на несколько машин в офисе был поставлен Линукс.
-Ваш сисадмин действительно старается, ему просто не повезло устроиться именно в сейчас. \
-"Бедняга. -- подумали вы. -- Надо попробовать помочь ему, раз уж у меня есть время!"
-
-Вы подходите к столу Майка и совершаете очень нехороший поступок: заглядываете в его выдвижной ящик. Вам повезло, вы нашли ровно то, что и искали: вырезки из статей про bash и shell.
-
-## Chapter II
-
-### Bash
-
->Bash is the shell, or command language interpreter, for the GNU operating system.
->
->The name is an acronym for the ‘Bourne-Again SHell’, a pun on Stephen Bourne, the author of the direct ancestor of the current Unix shell sh, which appeared in the Seventh Edition Bell Labs Research version of Unix.
->
->Bash is largely compatible with sh and incorporates useful features from the Korn shell ksh and the C shell csh. It is intended to be a conformant implementation of the IEEE POSIX Shell and Tools portion of the IEEE POSIX specification (IEEE Standard 1003.1). It offers functional improvements over sh for both interactive and programming use.
->
->While the GNU operating system provides other shells, including a version of csh, Bash is the default shell. Like other GNU software, Bash is quite portable. It currently runs on nearly every version of Unix and a few other operating systems - independently-supported ports exist for MS-DOS, OS/2, and Windows platforms.
-
-### Shell
-
->At its base, a shell is simply a macro processor that executes commands.
->
->A Unix shell is both a command interpreter and a programming language. As a command interpreter, the shell provides the user interface to the rich set of GNU utilities. Files containing commands can be created, and become commands themselves. These new commands have the same status as system commands, allowing users or groups to establish custom environments to automate their common tasks.
->
->Shells may be used interactively or non-interactively. In interactive mode, they accept input typed from the keyboard. When executing non-interactively, shells execute commands read from a file.
->
->A shell allows execution of GNU commands, both synchronously and asynchronously.
->
->While executing commands is essential, most of the power (and complexity) of shells is due to their embedded programming languages. Like any high-level language, the shell provides variables, flow control constructs, quoting, and functions.
->
->Shells offer features geared specifically for interactive use rather than to augment the programming language. These interactive features include job control, command line editing, command history and aliases.
-
-Под вырезками из статей, в ящике Майка, лежала папка с подписью "materials". Заглянув в неё, вы обнаруживаете несколько листов с описанием возможностей bash-скриптов.
 
 ## Chapter III
 
@@ -77,8 +24,6 @@ Linux basic bash scripting and system research.
 
 ## Part 1. Проба пера
 
-Перед тем, как приступать к помощи своему коллеге, вы решаете проверить свои знания на совсем небольшой программе.
-
 **== Задание ==**
 
 Написать bash-скрипт. Скрипт запускается с одним параметром. Параметр текстовый.  
@@ -86,8 +31,6 @@ Linux basic bash scripting and system research.
 Если параметр - число, то должно выводится сообщение о некорректности ввода.
 
 ## Part 2. Исследование системы
-
-Теперь вы уверены в том, что готовы приступить к первоначальной задумке. Вы быстро прикидываете, какую информацию о системе стоит вывести, и приступаете к работе.
 
 **== Задание ==**
 
@@ -117,8 +60,6 @@ Linux basic bash scripting and system research.
 
 ## Part 3. Визуальное оформление вывода для скрипта исследования системы
 
-Всё готово! Но как же скучно оно выглядит... Нужно добавить больше красок в этот мир!
-
 **== Задание ==**
 
 Написать bash-скрипт. За основу взять скрипт из [**Part 2**](#part-2-исследование-системы) и убрать из него часть, ответственную за сохранение данных в файл.  
@@ -136,8 +77,6 @@ Linux basic bash scripting and system research.
 После вывода сообщения, программа должна корректно завершится.
 
 ## Part 4. Конфигурирование визуального оформления вывода для скрипта исследования системы
-
-Вот теперь всё красиво! Но как же не хочется каждый раз вбивать цвета как параметры... Надо придумать что-нибудь более удобное.
 
 **== Задание ==**
 
@@ -170,8 +109,6 @@ Column 2 font color = default (blue)
 ```
 
 ## Part 5. Исследование файловой системы
-
-Теперь, когда вывод информации о системе готов, красив и удобен, можно приступать ко второй части плана.
 
 **== Задание ==**
 
@@ -214,19 +151,3 @@ TOP 10 executable files of the maximum size arranged in descending order (path, 
 etc up to 10  
 Script execution time (in seconds) = 1.5
 ```
-
-## Chapter IV
-
-Итак, вы доделали всё, что хотели. Всё-таки пришлось задержаться немного дольше, чем обычно, но это того стоило.
-Вы собираете вещи и, по пути к выходу из офиса, заглядываете в комнату, в которой ранее слышали своего коллегу.
-
-`-` Привет, я зайду? -- вы постучались в дверь.
-
-`-` Да... секунду. Не думал, что тут есть кто-то ещё в такое время.
-
-Дверь открылась и, после недолгой беседы, вы передали неопытному сисадмину флешку со скриптами.
-Вы попрощались и уже собирались уходить, но тут вспомнили одну важную деталь.
-
-`-` Совсем забыл спросить: как тебя звать то?
-
-`-` Себастьян.
