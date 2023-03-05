@@ -1,0 +1,29 @@
+version: '3.9'
+services:
+  server:
+    build:
+      context: ./part6_etc/server
+      dockerfile: Dockerfile
+    image: server:part6
+    container_name: server_fastcgi
+    tty: true
+    networks:
+      - main
+
+  proxy:
+    build:
+      context: ./part6_etc/proxy
+      dockerfile: Dockerfile
+    image: proxy:part6
+    container_name: proxy_container
+    tty: true
+    ports:
+      - "80:8080"
+    depends_on:
+      - server
+    networks:
+      - main
+  
+networks:
+  main:
+    driver: overlay     

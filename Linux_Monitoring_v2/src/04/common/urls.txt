@@ -1,0 +1,5 @@
+/forums/forums.txt
+/js/main.js
+/css/main.css
+/favicon.ico
+/downloads
