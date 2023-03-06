@@ -1,0 +1,71 @@
+stages:
+  - build
+  - codestyle
+  - test
+  - notification_ci
+  - deploy
+  - notification_cd
+
+build-test:
+  stage: build
+  tags:
+    - s21
+  script:
+    - cd src/cat
+    - make
+    - cd ../grep
+    - make
+  artifacts:
+    paths:
+      - src/cat/s21_cat
+      - src/grep/s21_grep
+    expire_in: 30 days
+
+style-test:
+  stage: codestyle
+  tags:
+    - s21
+  script:
+    - find src/cat/ \( \( -name \*.c -o -name \*.h \) \) -print0 | xargs -0 -n 1 clang-format --Werror -n --verbose
+    - find src/grep/ \( \( -name \*.c -o -name \*.h \) \) -print0 | xargs -0 -n 1 clang-format --Werror -n --verbose
+
+integration-tests:
+  stage: test
+  tags:
+    - s21
+  needs: ["style-test"]
+  script:
+    - bash git_test_cat.sh
+    - bash git_test_grep.sh
+    - bash tg_notification.sh Success_CI
+
+failed-notification-ci:
+  stage: notification_ci
+  tags:
+    - s21
+  script:
+    - bash tg_notification.sh Failed_CI
+  when: on_failure
+    
+deploy-final:
+  stage: deploy
+  tags:
+    - s21
+  when: on_success
+  script:
+    - bash git_deploy.sh
+    - bash tg_notification.sh Success_CD
+  when: manual
+  dependencies:
+    - build-test
+  environment: production
+  allow_failure: false
+
+failed-notification-cd:
+  stage: notification_cd
+  tags:
+    - s21
+  needs: ["deploy-final"]
+  script:
+    - bash tg_notification.sh Failed_CD
+  when: on_failure
