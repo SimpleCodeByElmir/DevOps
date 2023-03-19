@@ -15,10 +15,6 @@ fi
 
 THE_PATH="/var/www/html/metrics/metrics.html"
 
-### This 'while' loop works every 4 seconds after first itteration (so, no need to use Crontab job) ###
-while ((1<2))
-do
-
 #CPU_USAGE
 VAR_1=`cat /proc/stat | awk 'FNR==1 {print $2+$3+$4+$5}'` # (us + sys + ni + id) 
 VAR_2=`cat /proc/stat | awk 'FNR==1 {print $2+$3+$4}'` # (us + sys + ni)
@@ -39,7 +35,7 @@ DISK_SIZE=`df / | awk 'FNR==2 {print $2}'`
 DISK_USED=`df / | awk 'FNR==2 {print $3}'`
 DISK_AVAIL=`df / | awk 'FNR==2 {print $4}'`
 
-echo "# HELP cpu_usage Get CPU avg-load (2 sec interval)" > ${THE_PATH} ### notice only ">" is here. Rewriting every time.
+echo "# HELP cpu_usage Get CPU avg-load" > ${THE_PATH} ### notice only ">" is here. Rewriting every time.
 echo "# TYPE cpu_usage gauge" >> ${THE_PATH}
 echo "cpu_usage_script ${CPU_USAGE}" >> ${THE_PATH}
 echo "# HELP mem_total Get mem total (RAM)" >> ${THE_PATH}
@@ -64,5 +60,4 @@ echo "# HELP disk_avail Get Hard Disk/SSD available" >> ${THE_PATH}
 echo "# TYPE disk_avail gauge" >> ${THE_PATH}
 echo "disk_avail_script ${DISK_AVAIL}" >> ${THE_PATH}
 
-sleep 2
-done
+exit 0
