@@ -11,7 +11,7 @@ else
       logfile=$2
       flag=1
     else
-      echo "Error: the file doesn't exist or is empty, or it's a directory. Have You inputed the correct path to the file or it's name?"
+      echo "Error: file doesn't exist or is empty, or it's a directory. Have You inputed the correct path to the file or it's name?"
       exit 1
     fi
   elif [[ "$1" -eq 2 ]]; then

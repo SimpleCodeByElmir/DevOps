@@ -18,7 +18,7 @@ function check_memory {
   FREE_MEMORY=${FREE_MEMORY%M} #we need only int, without "M" letter
 if [ "$FREE_MEMORY" -le 1024 ]
 then
-  echo "Space left: ${FREE_MEMORY}Mb. Needs more than 1024Mb (etc. 1Gb). Script stopped."
+  echo "Error: space left - ${FREE_MEMORY}Mb. Needs more than 1024Mb (etc. 1Gb). Script stopped."
   rm all_dirs.txt 2>/dev/null
   rm dirs_list.txt 2>/dev/null
   exit 1

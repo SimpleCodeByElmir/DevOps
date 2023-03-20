@@ -50,7 +50,7 @@ elif [[ "$3" =~ ^([0-9]+)\.([0-9]+)Mb$ ]]; then
   fi
   SIZE=$3
 else
-  echo "Invalid third parameter.Only 'number.Mb' format allowed (etc. '10Mb', '0.1Mb'. *in range 0.x1 - 100.00 'Mb')"
+  echo "Invalid third parameter. Only 'number.Mb' format allowed (etc. '10Mb', '0.1Mb'. *in range 0.x1 - 100.00 'Mb')"
   exit 1
 fi
 
