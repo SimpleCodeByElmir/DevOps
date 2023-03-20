@@ -2,18 +2,12 @@
 
 start=$(date +%s.%1N)
 
-if ! [[ $1 ]]; then
-	echo "Set the path please!"
-	exit
-fi
-
-if [[ $2 ]]; then
-	echo "One path please!"
-	exit
+if [[ $# != 1 ]]; then
+  echo "Input only 1 parameter(the path)."
+  exit 1
 fi
 
 path=$1
-
 source input.sh
 
 #Total number of folders
@@ -24,7 +18,6 @@ echo "Total number of folders (including all nested ones) = $par2"
 #Top 5 folders sorted from bigger to smaller
 echo "Top 5 folders of maximum size arranged in descending order (path and size):"
 source top5fldrs.sh
-
 
 #Total number of files
 echo "Total number of files = $(sudo ls -R $path | wc -l)"
@@ -47,7 +40,6 @@ echo "Symbolic links = "$findo6""
 ###Top 10 file by size from bigger to smalles
 echo "Top 10 files of maximum size arranged in descending order (pathm size and type):"
 source tp10fls.sh
-
 
 ###################Top 10 executable files of the maximum size###########
 echo "Top 10 executable files of the maximum size arranged in descending order (path, size and MD5 hash of file):"

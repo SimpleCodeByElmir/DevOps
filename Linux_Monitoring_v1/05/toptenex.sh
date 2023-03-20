@@ -1,15 +1,14 @@
 #!/bin/bash
 
-
 #1
 md1="$(sudo find $path -name '*.exe' -exec du -a -h --max-depth=100 {} + | sort -hr | head -10 | awk 'FNR == 1 {print"1 - " $2", "$1} ')"
 md2="$(sudo find $path -name '*.exe' -exec du -a -h --max-depth=100 {} + | sort -hr | head -10 | tail -9 | md5sum | awk '{print $1}')"
 frstchr1=$(echo "$md1, $md2")
 frstchr2=${frstchr1:0:1}
 if [[ "$frstchr2" != 1 ]]; then	
-	echo "No 1th file"
+  echo "No 1th file"
 else
-	echo "$frstchr1"
+  echo "$frstchr1"
 fi
 
 #2
@@ -18,9 +17,9 @@ md4="$(sudo find $path -name '*.exe' -exec du -a -h --max-depth=100 {} + | sort 
 frstchr3=$(echo "$md3, $md4")
 frstchr4=${frstchr3:0:1}
 if [[ "$frstchr4" != 2 ]]; then	
-	echo "No 2th file"
+  echo "No 2th file"
 else
-	echo "$frstchr3"
+  echo "$frstchr3"
 fi
 
 
@@ -30,9 +29,9 @@ md6="$(sudo find $path -name '*.exe' -exec du -a -h --max-depth=100 {} + | sort 
 frstchr5=$(echo "$md5, $md6")
 frstchr6=${frstchr5:0:1}
 if [[ "$frstchr6" != 3 ]]; then	
-	echo "No 3th file"
+  echo "No 3th file"
 else
-	echo "$frstchr5"
+  echo "$frstchr5"
 fi
 
 
@@ -42,9 +41,9 @@ md8="$(sudo find $path -name '*.exe' -exec du -a -h --max-depth=100 {} + | sort 
 frstchr7=$(echo "$md7, $md8")
 frstchr8=${frstchr7:0:1}
 if [[ "$frstchr8" != 4 ]]; then	
-	echo "No 4th file"
+  echo "No 4th file"
 else
-	echo "$frstchr7"
+  echo "$frstchr7"
 fi
 
 
@@ -54,9 +53,9 @@ md10="$(sudo find $path -name '*.exe' -exec du -a -h --max-depth=100 {} + | sort
 frstchr9=$(echo "$md9, $md10")
 frstchr10=${frstchr9:0:1}
 if [[ "$frstchr10" != 5 ]]; then	
-	echo "No 5th file"
+  echo "No 5th file"
 else
-	echo "$frstchr9"
+  echo "$frstchr9"
 fi
 
 
@@ -66,9 +65,9 @@ md12="$(sudo find $path -name '*.exe' -exec du -a -h --max-depth=100 {} + | sort
 frstchr11=$(echo "$md11, $md12")
 frstchr12=${frstchr11:0:1}
 if [[ "$frstchr12" != 6 ]]; then	
-	echo "No 6th file"
+  echo "No 6th file"
 else
-	echo "$frstchr11"
+  echo "$frstchr11"
 fi
 
 
@@ -78,9 +77,9 @@ md14="$(sudo find $path -name '*.exe' -exec du -a -h --max-depth=100 {} + | sort
 frstchr13=$(echo "$md13, $md14")
 frstchr14=${frstchr13:0:1}
 if [[ "$frstchr14" != 7 ]]; then	
-	echo "No 7th file"
+  echo "No 7th file"
 else
-	echo "$frstchr14"
+  echo "$frstchr14"
 fi
 
 #8
@@ -89,9 +88,9 @@ md16="$(sudo find $path -name '*.exe' -exec du -a -h --max-depth=100 {} + | sort
 frstchr15=$(echo "$md15, $md16")
 frstchr16=${frstchr15:0:1}
 if [[ "$frstchr16" != 8 ]]; then	
-	echo "No 8th file"
+  echo "No 8th file"
 else
-	echo "$frstchr15"
+  echo "$frstchr15"
 fi
 
 
@@ -101,9 +100,9 @@ md18="$(sudo find $path -name '*.exe' -exec du -a -h --max-depth=100 {} + | sort
 frstchr17=$(echo "$md17, $md18")
 frstchr18=${frstchr17:0:1}
 if [[ "$frstchr18" != 9 ]]; then	
-	echo "No 9th file"
+  echo "No 9th file"
 else
-	echo "$frstchr17"
+  echo "$frstchr17"
 fi
 
 #10
@@ -112,7 +111,7 @@ md20="$(sudo find $path -name '*.exe' -exec du -a -h --max-depth=100 {} + | sort
 frstchr19=$(echo "$md1, $md2")
 frstchr20=${frstchr19:0:1}
 if [[ "$frstchr20" != 10 ]]; then	
-	echo "No 10th file"
+  echo "No 10th file"
 else
-	echo "$frstchr19"
+  echo "$frstchr19"
 fi

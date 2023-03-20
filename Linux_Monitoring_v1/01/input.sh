@@ -1,19 +1,10 @@
 #!/bin/bash
 
-if ! [[ $1 ]]; then
-	echo "Run this script with one text parameter!"
-	exit
-fi
-
-par=$1
-
-if [[ $2 ]]; then
-	echo "Only 1 parameter allowed!"
-	exit
-fi
-
-if ! [[ $par =~ ^[a-zA-Z]+$ ]]; then
-	echo "Invalid input. Only letters allowed."
+if [[ $# != 1 || ! $1 =~ ^[a-zA-Z]+$ ]]; then
+  echo "Run with one(text) parameter only."
+  exit 1
 else
-	echo $par
+  echo "${1}"
 fi
+
+exit 0

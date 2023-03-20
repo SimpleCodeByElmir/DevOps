@@ -1,4 +1,5 @@
 #!/bin/bash
+### This script was found in the 'WWW' and adapted.
 
 hexToInt() {
     printf -v $1 "%d\n" 0x${2:6:2}${2:4:2}${2:2:2}${2:0:2}
