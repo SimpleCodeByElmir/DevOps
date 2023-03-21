@@ -71,7 +71,7 @@ if [[ $par1 != $par2 && $par3 != $par4 ]]; then
   echo -en "\n"
   source outputsettings.sh
 else
-  echo -e "Colors of text and background can't be equal.\nPlease run programm again and choose another settings."
+  echo -e "Colors of font and background can't be equal.\nPlease run programm again and choose another settings."
   exit 1
 fi
 

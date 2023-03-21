@@ -73,7 +73,7 @@ if [[ $par1 != $par2 && $par3 != $par4 ]]; then
 
   echo -e "$(awk '{ printf "%s%s%s %s%s%s%s %s %s %s %s %s%s\n", v1, v2, $1, v5, $2, v3, v4, $3, $4, $5, $6, $7, v5 }' v1=$COLB v2=$COL v3=$SCOLB v4=$SCOL v5=$ENDCOL 1.status)"
 else
-  echo -e "Colors of text and background can't be equal.\nPlease run programm again and choose another settings."
+  echo -e "Colors of font and background can't be equal.\nPlease run programm again and choose another settings."
   exit 1
 fi
 

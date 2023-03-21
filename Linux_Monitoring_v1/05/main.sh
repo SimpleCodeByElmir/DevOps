@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#start=$(date +%s.%1N)
-startt=$(date +%s.%1N)
+startt=$(date +%s.%N)
 
 source input.sh
 
