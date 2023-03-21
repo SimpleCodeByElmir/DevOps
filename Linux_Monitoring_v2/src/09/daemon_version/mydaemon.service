@@ -1,0 +1,9 @@
+[Unit]
+Description=My_daemon
+
+[Service]
+ExecStart=/usr/bin/main
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

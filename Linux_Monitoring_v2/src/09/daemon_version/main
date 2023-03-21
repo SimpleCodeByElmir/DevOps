@@ -1,0 +1,70 @@
+#!/bin/bash
+
+#For running through "systemd" put this script in the "/usr/bin".
+#run "sudo systemctl start mydaemon.service"
+#run "chmod +x main.sh" if not working.
+#if says "Permission denied /var/www/html/metrics/metrics.html", then run "sudo chown username:username /var/www/html/metrics"  
+
+if [[ $# != 0 ]]
+then
+  echo "Run without params."
+  exit 1
+elif ! [[ -d "/var/www/html/metrics" ]]
+then
+  echo "Stop. Please, create dir: /var/www/html/metrics"
+  exit 1
+fi
+
+THE_PATH="/var/www/html/metrics/metrics.html"
+
+### This 'while' loop works every 4 seconds after first itteration (so, no need to use Crontab job) ###
+while ((1<2))
+do
+
+#CPU_USAGE
+VAR_1=`cat /proc/stat | awk 'FNR==1 {print $2+$3+$4+$5}'` # (us + sys + ni + id) 
+VAR_2=`cat /proc/stat | awk 'FNR==1 {print $2+$3+$4}'` # (us + sys + ni)
+sleep 2
+VAR_3=`cat /proc/stat | awk 'FNR==1 {print $2+$3+$4}'`
+VAR_4=`cat /proc/stat | awk 'FNR==1 {print $2+$3+$4+$5}'`
+CPU_USAGE=`echo "scale=5; 100*(${VAR_3} - ${VAR_2})/(${VAR_4}-${VAR_1})" | bc`
+
+#RAM
+MEM_TOTAL=`cat /proc/meminfo | grep MemTotal | awk '{print $2}'`
+MEM_FREE=`cat /proc/meminfo | grep MemFree | awk '{print $2}'`
+MEM_AVAIL=`cat /proc/meminfo | grep MemAvailable | awk '{print $2}'`
+
+#HARD DISK 
+#DISK_CAPACITY=`sudo dmesg | grep blocks | awk '{print $10 }'`
+DISK_CAPACITY=${DISK_CAPACITY#*(}
+DISK_SIZE=`df / | awk 'FNR==2 {print $2}'`
+DISK_USED=`df / | awk 'FNR==2 {print $3}'`
+DISK_AVAIL=`df / | awk 'FNR==2 {print $4}'`
+
+echo "# HELP cpu_usage Get CPU avg-load (2 sec interval)" > ${THE_PATH} ### notice only ">" is here. Rewriting every time.
+echo "# TYPE cpu_usage gauge" >> ${THE_PATH}
+echo "cpu_usage_script ${CPU_USAGE}" >> ${THE_PATH}
+echo "# HELP mem_total Get mem total (RAM)" >> ${THE_PATH}
+echo "# TYPE mem_total gauge" >> ${THE_PATH}
+echo "mem_total_script ${MEM_TOTAL}" >> ${THE_PATH}
+echo "# HELP mem_free Get mem free (RAM)" >> ${THE_PATH}
+echo "# TYPE mem_free gauge" >> ${THE_PATH}
+echo "mem_free_script ${MEM_FREE}" >> ${THE_PATH}
+echo "# HELP mem_avail Get mem available (RAM)" >> ${THE_PATH}
+echo "# TYPE mem_avail gauge" >> ${THE_PATH}
+echo "mem_avail_script ${MEM_AVAIL}" >> ${THE_PATH}
+#echo "# HELP disk_capacity Get Hard Disk/SSD capacity" >> ${THE_PATH}
+#echo "# TYPE disk_capacity gauge" >> ${THE_PATH}
+#echo "disk_capacity_script ${DISK_CAPACITY}" >> ${THE_PATH}
+echo "# HELP disk_size Get Hard Disk/SSD size" >> ${THE_PATH}
+echo "# TYPE disk_size gauge" >> ${THE_PATH}
+echo "disk_size_script ${DISK_SIZE}" >> ${THE_PATH}
+echo "# HELP disk_used Get Hard Disk/SSD used" >> ${THE_PATH}
+echo "# TYPE disk_used gauge" >> ${THE_PATH}
+echo "disk_used_script ${DISK_USED}" >> ${THE_PATH}
+echo "# HELP disk_avail Get Hard Disk/SSD available" >> ${THE_PATH}
+echo "# TYPE disk_avail gauge" >> ${THE_PATH}
+echo "disk_avail_script ${DISK_AVAIL}" >> ${THE_PATH}
+
+sleep 2
+done

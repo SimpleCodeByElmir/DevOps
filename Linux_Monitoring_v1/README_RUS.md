@@ -1,7 +1,5 @@
 # Linux Monitoring v1.0
 
-This Project was My first experience with BASH-Scripting. So, do not judge too harsh. Better check Linux_Monitoring_v2.
-
 Linux basic bash scripting and system research.
 
 ## Contents
