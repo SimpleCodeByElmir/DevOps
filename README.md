@@ -1,4 +1,5 @@
-This Repository contains My DevOps / Linux system-administration projects. The tasks for projects were given by the School 21 of SBER (programming school based on French Ecole 42) while my studying as a student.
+This Repository contains My C-language programming projects. All tasks for Projects were given by the School 21 (programming School of Sber) while I was studying there.
+***The School 21 is based on French Ecole 42.
 
 The Hardness of Projects (from hardest to easiest):
 1) Linux_Monitoring_v2

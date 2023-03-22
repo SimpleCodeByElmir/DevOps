@@ -1,23 +1,8 @@
 # UNIX/Linux operating systems (Basic).
 
-3. [Chapter III](#chapter-iii) \
-   3.1 [Installation of the OS](#part-1-installation-of-the-os)  
-   3.2 [Creating a user](#part-2-creating-a-user)  
-   3.3 [Setting up the OS network](#part-3-setting-up-the-os-network)   
-   3.4 [OS Update](#part-4-os-update)  
-   3.5 [Using the sudo command](#part-5-using-the-sudo-command)  
-   3.6 [Installing and configuring the time service](#part-6-installing-and-configuring-the-time-service)  
-   3.7 [Installing and using text editors](#part-7-installing-and-using-text-editors)  
-   3.8 [Installing and basic setup of SSHD service](#part-8-installing-and-basic-setup-of-the-sshd-service)  
-   3.9 [Installing and using the top, htop utilities](#part-9-installing-and-using-the-top-htop-utilities)   
-   3.10 [Using the fdisk utility](#part-10-using-the-fdisk-utility)   
-   3.11 [Using the df utility](#part-11-using-the-df-utility)    
-   3.12 [Using the du utility](#part-12-using-the-du-utility)    
-   3.13 [Installing and using the ncdu utility](#part-13-installing-and-using-the-ncdu-utility)    
-   3.14 [Working with system logs](#part-14-working-with-system-logs)     
-   3.15 [Using the CRON job scheduler](#part-15-using-the-cron-job-scheduler)
+Linux system installation and updates. Administration basics.
 
-## Chapter III
+## Chapter I
 
 As a result of the work you should provide a report with completed tasks. Each part of the task describe what should be added to the report once it has been completed. This can be screenshots, some data, etc.
 
@@ -29,10 +14,6 @@ As a result of the work you should provide a report with completed tasks. Each p
 
 ## Part 1. Installation of the OS
 
-`-` Well, let's finally get this Linux installed,'' -- Sebastian moves the laptop closer to you.
-
-`-` Yes, it's about time. I saw a great instruction on *Linuxconfig* to install the version we need.
-
 **== Task ==**
 
 ##### Install **Ubuntu 20.04 Server LTS** without GUI. (Use VirtualBox).
@@ -43,8 +24,6 @@ As a result of the work you should provide a report with completed tasks. Each p
 
 ## Part 2. Creating a user
 
-`-` An installed system is a good thing, but what if someone else uses it? I'll teach you how to create a new user.
-
 **== Task ==**
 
 ##### Create a user other than the one created during installation. The user must have permission to read logs from the /var/log folder.
@@ -54,10 +33,6 @@ As a result of the work you should provide a report with completed tasks. Each p
 - Add a screenshot of the command output.
 
 ## Part 3. Setting up the OS network
-
-`-` In our world, you can't go far without the Internet. However, since we want to train you for the role of a system administrator, I'll show you a little more than just setting up a network.
-
-`-` Before we begin, I suggest reading about network interfaces and DHCP.
 
 **== Task ==**
 
@@ -77,8 +52,6 @@ As a result of the work you should provide a report with completed tasks. Each p
 
 ## Part 4. OS Update
 
-`-` You're probably wondering, "Is the system ready now?" It's not ready at all! We haven't updated it to the latest version yet.
-
 **== Task ==**
 
 ##### Update the system packages to the latest version
@@ -86,8 +59,6 @@ As a result of the work you should provide a report with completed tasks. Each p
 - Add a screenshot of this message to the report.
 
 ## Part 5. Using the **sudo** command
-
-`-` How often were you told as a child that you forgot to say the "magic" word? One of those "magic" words was "please". Linux has its counterpart – _sudo_. The system won't perform some operations until it hears the "magic" word.
 
 **== Task ==**
 
@@ -98,8 +69,6 @@ As a result of the work you should provide a report with completed tasks. Each p
 
 ## Part 6. Installing and configuring the time service
 
-`-` Although we have the correct time now, it may not always be that way. To avoid having to set it every time yourself, there are time sync services.
-
 **== Task ==**
 
 ##### Set up the automatic time synchronisation service.
@@ -109,22 +78,6 @@ As a result of the work you should provide a report with completed tasks. Each p
 - Add screenshots of the correct time and command output to the report.
 
 ## Part 7. Installing and using text editors
-
-`-` I think we're ready to move on to one of the scariest parts. You’re pointing toward the Netherlands on the map of the world hanging on the wall.
-
-`-` Here, Bram Moolenaar has unraveled the mysteries of harmony and inner concentration. \
-This is where the first version of VIM was released on 2 November 1991. \
-Do you want to learn how to work in VIM?
-
-`-` Yes...
-
-`-` Then I am your master.
-
-`-` Okay...
-
-`-` Just don't cry.
-
-`-` I won’t.
 
 **== Task ==**
 
@@ -146,8 +99,6 @@ Do you want to learn how to work in VIM?
 
 ## Part 8. Installing and basic setup of the **SSHD** service
 
-`-` It's convenient to have access from one computer to another over a network, isn't it? But to make it not only convenient, but also safe, you should use SSH service.
-
 **== Task ==**
 
 ##### Install the SSHd service.
@@ -164,8 +115,6 @@ Do you want to learn how to work in VIM?
 - Explain the meaning of the -tan keys, the value of each output column, the value 0.0.0.0. in the report.
 
 ## Part 9. Installing and using the **top**, **htop** utilities
-
-`-` If I were asked what useful things **top** and **htop** utilities do, I would answer in one word: everything.
 
 **== Task ==**
 
@@ -187,16 +136,12 @@ Do you want to learn how to work in VIM?
 
 ## Part 10. Using the **fdisk** utility
 
-`-` Now let's figure out how to get information about your hard disk. Especially for you I've put together a couple of examples of how to use the fdisk utility.
-
 **== Task ==**
 
 ##### Run the fdisk -l command.
 - In the report write the name of the hard disk, its capacity and number of sectors, and also the swap size.
 
 ## Part 11. Using the **df** utility
-
-`-` We got the information about the hard disk, but often it is much more interesting to get information about the disk space, which can be obtained with the df utility.
 
 **== Task ==**
 
@@ -218,8 +163,6 @@ Do you want to learn how to work in VIM?
 
 ## Part 12. Using the **du** utility
 
-`-` df is not the only way to get information about disk space. I'll tell you about another one.
-
 **== Task ==**
 
 ##### Run the du command.
@@ -228,8 +171,6 @@ Do you want to learn how to work in VIM?
 - Add screenshots with the output of all used commands to the report.
 
 ## Part 13. Installing and using the **ncdu** utility
-
-`-` You probably didn’t like much the format in which the du command outputs information. I understand you perfectly. So now we'll take a look at its improved version.
 
 **== Task ==**
 
@@ -240,8 +181,6 @@ Do you want to learn how to work in VIM?
 - Add screenshots of the used commands to the report.
 
 ## Part 14. Working with system logs
-
-`-` A system administrator sometimes needs to review events which happened in a system in the recent past. Linux has system logs for that.
 
 **== Task ==**
 
@@ -254,8 +193,6 @@ Do you want to learn how to work in VIM?
 - Add a screenshot of the service restart message to the report (search for it in the logs).
 
 ## Part 15. Using the **CRON** job scheduler
-
-`-` Phew, we finally got to the last part of my long narrative. I will now show you the program, which, among other things, noticeably simplifies the periodic invocation of other programs.
 
 **== Task ==**
 

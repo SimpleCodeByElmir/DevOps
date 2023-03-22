@@ -2,20 +2,7 @@
 
 Linux networks configuration on virtual machines.
 
-## Contents
-
-3. [Chapter III](#chapter-iii) \
-   3.1. [ipcalc tool](#ipcalc-tool) \
-   3.2. [Static routing between two machines](#part-2-static-routing-between-two-machines) \
-   3.3. [iperf3 utility](#part-3-iperf3-utility) \
-   3.4. [Network firewall](#part-4-network-firewall) \
-   3.5. [Static network routing](#part-5-static-network-routing) \
-   3.6. [Dynamic IP configuration using DHCP](#part-6-dynamic-ip-configuration-using-dhcp) \
-   3.7. [NAT](#part-7-nat) \
-   3.8. [Bonus. Introduction to SSH Tunnels](#part-8-bonus-introduction-to-ssh-tunnels)
-4. [Chapter IV](#chapter-iv)
-
-## Chapter III
+## Chapter I
 
 As a result of the work you should provide a report with completed tasks. Each part of the task describe what should be added to the report once it has been completed. This can be answers to questions, screenshots, etc.
 - A report with a .md extension must be uploaded to the repository, in the src folder.
@@ -139,9 +126,6 @@ iptables –X
 
 **== Task ==**
 
-Network: \
-<img src="misc/images/part5_network.png" alt="part5_network" width="500"/>
-
 ##### Start five virtual machines (3 workstations (ws11, ws21, ws22) and 2 routers (r1, r2))
 
 #### 5.1. Configuration of machine addresses
@@ -261,7 +245,7 @@ subnet 10.20.0.0 netmask 255.255.255.192
 
 ## Part 7. **NAT**
 
-And finally, the cherry on the cake, let me tell you about network address translation mechanism.
+And finally, let me tell you about network address translation mechanism.
 
 **== Task ==**
 
@@ -303,15 +287,7 @@ And finally, the cherry on the cake, let me tell you about network address trans
 
 ## Part 8. Bonus. Introduction to **SSH Tunnels**
 
-`-` Well, that'll be all for now. Do you have any other questions?
-
-`-` Yes, I wanted to ask about one more thing. When I was at work, I overheard that there are some kind of training projects in my company. I don't know the details, but I'd really like to take a look... It might be useful.
-
-`-` Yes, it's really interesting, but how can I help you with that?
-
-`-` The problem is that you need to have an access to a closed network to get to these projects. Can you give me any advice on that?
-
-`-` Wow, that’s really something… I'm not sure how much help this will be, but I can tell you about **SSH Tunnels**.
+`-` I'm not sure how much help this will be, but I can tell you about **SSH Tunnels**.
 
 **== Task ==**
 
@@ -324,19 +300,3 @@ And finally, the cherry on the cake, let me tell you about network address trans
 
 ##### Save dumps of virtual machine images
 **p.s. Do not upload dumps to git under any circumstances!**
-
-## Chapter IV
-
-`-` Thank you so much for the help!
-
-`-` You’re welcome! It was good for me to remember the basics of administration too. By the way, I’ve decided to go into DevOps.
-
-`-` Wow! Have you found a job yet?
-
-`-` Yes, but I’ll have to move. So, next time you'll have to learn everything on your own.
-
-`-` Sooner or later I'd have to start anyway, so maybe it's for the best. Stay in touch to tell me about how you’re getting on!
-
-`-` You too!
-
-\> *You talk about other things for a while, listening to some nice music and finishing your drinks, and then you say goodbye...*.
