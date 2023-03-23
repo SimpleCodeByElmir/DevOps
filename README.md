@@ -1,4 +1,4 @@
-This Repository contains My C-language programming projects. All tasks for Projects were given by the School 21 (programming School of Sber) while I was studying there.
+This Repository contains My C-language programming projects. All tasks for Projects were given by the Sberbank programming School 21 while I was studying there.
 ***The School 21 is based on French Ecole 42.
 
 Complexity of Projects (from hardest to easiest):
