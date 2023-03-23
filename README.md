@@ -13,4 +13,4 @@ Complexity of Projects (from hardest to easiest):
 5) CICD
 - Gitlab-CI
 6) Linux_System
-- Basic Linux Ubuntu 20.04 LTS installation and configuration.
+- Linux Ubuntu 20.04 LTS installation and basic configuration.
