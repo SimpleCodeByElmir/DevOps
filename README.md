@@ -1,4 +1,8 @@
-This Repository contains My C-language programming projects. All tasks for Projects were given by the Sberbank programming School 21 while I was studying there.
+# DevOps
+
+## This Repository contains My DevOps projects.
+
+Below You can see the list of Projects. All tasks for them were given by the Sberbank Programming School 21 while I was studying there.
 **The School 21 is based on French Ecole 42.
 
 Complexity of Projects (from hardest to easiest):
